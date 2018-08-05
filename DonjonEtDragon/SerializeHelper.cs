@@ -13,6 +13,7 @@ namespace DonjonEtDragon
         private SaveFileDialog _sfd = new SaveFileDialog();
         private OpenFileDialog _ofd = new OpenFileDialog();
         private List<Perso> _lstPerso;
+        private string _filename = "";
 
         public SerializeHelper()
         {
@@ -27,7 +28,7 @@ namespace DonjonEtDragon
             {
                 try
                 {
-                    string _filename = _sfd.FileName;
+                    _filename = _sfd.FileName;
                     Stream stream = File.Open(_filename, FileMode.Create);
                     BinaryFormatter bformatter = new BinaryFormatter();
 
@@ -42,12 +43,33 @@ namespace DonjonEtDragon
             }
         }
 
+        public void SaveCurrent(object _object)
+        {
+            if (string.IsNullOrEmpty(_filename))
+            {
+                Save(_object);
+            } 
+            else
+            {
+                try {
+                    Stream stream = File.Open(_filename, FileMode.Create);
+                    BinaryFormatter bformatter = new BinaryFormatter();
+
+                    bformatter.Serialize(stream, _object);
+                    stream.Close();
+                    stream.Dispose();
+                } catch (Exception e) {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+
         public List<Perso> Open()
         {
             DialogResult rep = _ofd.ShowDialog();
             if (rep == DialogResult.OK)
             {
-                string _filename = _ofd.FileName;
+                _filename = _ofd.FileName;
 
                 Stream stream = File.Open(_filename, FileMode.Open);
                 BinaryFormatter bformatter = new BinaryFormatter();

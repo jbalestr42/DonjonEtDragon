@@ -15,6 +15,7 @@ namespace DonjonEtDragon
         private List<Perso> lst = new List<Perso>();
         private ItemGenerator f;
         private Dice fd;
+        private bool isSaving = false;
 
         public Main()
         {
@@ -22,6 +23,28 @@ namespace DonjonEtDragon
             InitFirstPage();
             f = ItemGenerator.Instance;
 
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData) {
+            if (keyData == (Keys.Control | Keys.S)) {
+                if (!isSaving) {
+                    lst.Clear();
+                    try {
+                        foreach (TabPage tabPage in tcMain.TabPages) {
+                            if (tabPage != tpPlus) {
+                                var v = tabPage.Controls[0] as FicPerso;
+                                lst.Add(v.perso);
+                            }
+                        }
+                        helper.SaveCurrent(lst);
+                    } catch { }
+                    isSaving = true;
+                }
+                return true;
+            } else {
+                isSaving = false;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         private void msoDes_Click(object sender, EventArgs e)
