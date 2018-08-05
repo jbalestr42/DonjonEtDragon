@@ -1,0 +1,49 @@
+en cuir.
+en os.
+en peau.
+en fer.
+en argent.
+en or.
+en maille.
+en tissu.
+en laine.
+en silex.
+en adamantite.
+divin.
+de lumiere.
+d'acier.
+d'obsidian.
+du dragon.
+de l'aigle.
+de l'orgre.
+du malin.
+de reve.
+maudit.
+sombre.
+du brigan.
+du capitaine.
+leger.
+lourd.
+de la prehistoire.
+du gueux.
+du brave.
+du soldat.
+du forgeron.
+du redoute.
+de la bete.
+du seigneur.
+du roi.
+de pacotille.
+oublie.
+de rage.
+du saint.
+de feutre.
+elfique.
+du shetan.
+du goblin.
+dentele.
+de lin.
+de berserk.
+noir.
+du garde.
+couvert de sang.

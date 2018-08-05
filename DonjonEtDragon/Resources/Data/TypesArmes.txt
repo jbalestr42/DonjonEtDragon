@@ -1,0 +1,29 @@
+Epee
+Hache
+Arc
+Dague
+Baguette
+Baton
+Arme de poing
+Rapiere
+Glaive
+Ninja-ku
+Falchion
+Masse
+Marteau
+Shuriken
+Arbalete
+Arbalete de poing
+Couteau
+Gourdin
+Trident
+Lance
+Sceptre
+Flamberge
+Fouet
+Fleau
+Estoc
+Katana
+Bouclier
+Hache de lancer
+Couteau de lancer
